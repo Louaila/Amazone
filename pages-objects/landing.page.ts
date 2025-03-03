@@ -21,18 +21,20 @@ export class LandingPage {
     async navigateToWebsite() {
         await this.page.goto(this.url);
         await expect(this.page).toHaveTitle(/Amazon/);
+        await this.cookieButton.waitFor({ state: 'visible' });
+        await expect(this.cookieButton).toBeVisible();
         await this.cookieButton.click();
     }
 
     async searchForProduct() {
-        await expect(this.searchBox).toBeVisible;
+        await expect(this.searchBox).toBeVisible();
         await this.searchBox.click();
         await this.searchBox.fill('tablette');
         await this.product.click();
     }
 
     async goToIdentification() {
-        await expect(this.identificationButton).toBeVisible;
+        await expect(this.identificationButton).toBeVisible();
         await this.identificationButton.click();
     }
 }

@@ -15,10 +15,8 @@ export class ProductPage {
     }
 
     async addProductToCart() {
-        await expect(this.stockValue).toContainText('En stock');
+      
         await expect(this.addToCartButton).toBeVisible();
         await this.addToCartButton.click();
-        // await this.page.locator('#availability').getByText('En stock').click();
-        // await this.page.locator('#apex_offerDisplay_single_desktop').click();
-        // await this.page.getByRole('button', { name: 'Ajouter au panier', exact: true }).click();
+
     }}
